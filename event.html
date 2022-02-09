@@ -6,7 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+    <p id="input-text"></p>
+    <input id="input" type="text"> <button id="input-btn">update</button>
+
+
+    <p id="inner-text"></p>
+    <button onclick="justFunction()">just function</button>
     
+    <script>
+        function justFunction(){
+            const p = document.getElementById('inner-text');
+            p.innerText = 'This is Magic';
+        }
+
+        // input 
+        document.getElementById('input-btn').addEventListener('click' ,function(){
+            const input= document.getElementById('input');
+            const p = document.getElementById('input-text');
+            p.innerText = input.value;
+            input.value ='';
+        })
+
+    </script>
 </body>
 </html>
