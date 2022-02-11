@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 id="heading">More Events</h3>
+    <input id="input" type="text" placeholder="please type delete">
+    <button id="delete-btn" disabled>Delete</button>
+
+    
+
+    <script>
+        // addEventListener to button 
+        document.getElementById('delete-btn').addEventListener('click', function(){
+            // hide button 
+            document.getElementById('heading').style.display='none';
+        })
+        // focus 
+        document.getElementById('input').addEventListener('focus', function(){
+            // hide background red
+            document.body.style.backgroundColor = 'red';
+        })
+        // blur 
+        document.getElementById('input').addEventListener('blur', function(){
+            // hide background red
+            document.body.style.backgroundColor = 'white';
+        })
+        // key down 
+        // document.getElementById('input').addEventListener('keydown', function(){
+            
+        //     const keyText = document.getElementById('input');
+        //     console.log(keyText.value);
+        // })
+        // key up 
+        document.getElementById('input').addEventListener('keyup', function(event){
+            
+            const dleteBtn = document.getElementById('delete-btn');
+            const keyText = document.getElementById('input');
+            if(event.target.value== 'delete'){
+                dleteBtn.removeAttribute('disabled');
+            }
+            else{
+                dleteBtn.setAttribute('disabled',true);
+            }
+        })
+        
+    
+    </script>
+</body>
+</html>
